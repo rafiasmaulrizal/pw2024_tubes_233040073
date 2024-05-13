@@ -1,0 +1,8 @@
+:root {
+  --primary: green;
+  --bg: #070000;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
