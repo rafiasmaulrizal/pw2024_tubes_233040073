@@ -1,12 +1,5 @@
 <?php
-if (isset($_POST["submit"])) {
-  if ($_POST["username"] == "admin" && $_POST["password"] == "admin") {
-    header("Location: admin.php");
-    exit;
-  } else {
-    $error = true;
-  }
-}
+require '../includes/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,9 +20,6 @@ if (isset($_POST["submit"])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- icon bootstrap -->
 
-
-
-
 <body>
   <div class="container">
     <h1>Login Admin</h1>
@@ -39,6 +29,7 @@ if (isset($_POST["submit"])) {
       <p> Username / Password salah</p>
     <?php endif; ?>
     <ul>
+
       <form action="" method="post">
         <label for="username">Username :</label>
         <input type="text" name="username" id="username">
