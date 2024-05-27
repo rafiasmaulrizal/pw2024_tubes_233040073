@@ -1,23 +1,27 @@
 <?php
+
+session_start();
+
+if (!isset($_SESSION['login'])) {
+  header("Location: login.php");
+  exit;
+}
 require "../includes/functions.php";
 
-// Ambil data di URL
 $id = $_GET["id"];
-// Query data berdasarkan id
+
 $kategori = query("SELECT * FROM kategori WHERE id = $id")[0];
 
-// Cek apakah tombol submit sudah ditekan atau belum
 if (isset($_POST["submit"])) {
-  // Cek apakah data berhasil diubah atau tidak
   if (ubah($_POST) > 0) {
     echo "<script>
               alert('data berhasil diubah');
-              document.location.href = 'index.php';
+              document.location.href = 'dashboard/index.php';
             </script>";
   } else {
     echo "<script>
               alert('data gagal diubah');
-              document.location.href = 'index.php';
+              document.location.href = 'ubah.php';
             </script>";
   }
 }
@@ -31,43 +35,40 @@ if (isset($_POST["submit"])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edit</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- link css -->
   <link rel="stylesheet" href="../assets/css/style.css">
-  <!-- Bootstrap core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
-  <div class="container col-5 mt-4">
-    <h2>Ubah Kategori</h2>
-    <hr>
-    <br>
-
-    <form action="" method="post">
+  <div class=" container d-flex justify-content-center mt-5">
+    <form action="" method="post" enctype="multipart/form-data" class="shadow p-5 col-md-5 center mt-1  ">
+      <h2>Ubah Kategori</h2>
+      <hr>
       <input type="hidden" name="id" value="<?= $kategori["id"]; ?>">
+      <input type="hidden" name="gambarLama" value="<?= $kategori["gambar"]; ?>">
 
-      <div class="mb-3">
-        <label for="nama" class="form-label">Nama</label>
+      <div class="mb-3 shadow-sm">
+        <label for="nama" class="form-label fw-medium">Nama</label>
         <input type="text" class="form-control" id="nama" name="nama" required value="<?= $kategori["nama"]; ?>">
       </div>
 
-      <div class="mb-3">
-        <label for="deskripsi" class="form-label">Deskripsi</label>
+      <div class="mb-3 shadow-sm">
+        <label for="deskripsi" class="form-label fw-medium">Deskripsi</label>
         <input type="text" class="form-control" id="deskripsi" name="deskripsi" required value="<?= $kategori["deskripsi"]; ?>">
       </div>
 
-      <div class="mb-3">
-        <label for="lokasi" class="form-label">Lokasi</label>
+      <div class="mb-3 shadow-sm">
+        <label for="lokasi" class="form-label fw-medium">Lokasi</label>
         <input type="text" class="form-control" id="lokasi" name="lokasi" required value="<?= $kategori["lokasi"]; ?>">
       </div>
 
-      <div class="mb-3">
-        <label for="gambar" class="form-label">Gambar</label>
-        <input type="text" class="form-control" id="gambar" name="gambar" required value="<?= $kategori["gambar"]; ?>">
+      <div class="mb-3 shadow-sm">
+        <label for="gambar" class="form-label fw-medium">Gambar</label>
+        <img src="../assets/img/<?= $kategori['gambar']; ?>" width="200" alt="">
+        <input type="file" class="form-control" id="gambar" name="gambar">
       </div>
 
-      <button type="submit" name="submit" class="btn btn-warning">Ubah</button>
+      <button type="submit" name="submit" class="btn btn-warning shadow-sm fw-medium">Ubah</button>
     </form>
 
   </div>
