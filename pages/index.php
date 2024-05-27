@@ -1,5 +1,4 @@
 <?php
-
 require '../includes/functions.php';
 $kategori = query("SELECT * FROM kategori");
 ?>
@@ -36,28 +35,28 @@ $kategori = query("SELECT * FROM kategori");
           </li>
           <li class="nav-item">
             <?php if (isLoggedIn()) : ?>
-              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php<?= $item['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Produk</a>
+              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php?id=<?= $kategori['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Produk</a>
             <?php else : ?>
               <a class="nav-link active fw-medium" aria-current="page" href="login.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Produk</a>
             <?php endif; ?>
           </li>
           <li class="nav-item">
             <?php if (isLoggedIn()) : ?>
-              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php<?= $item['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Tentang kami</a>
+              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php?id=<?= $kategori['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Tentang kami</a>
             <?php else : ?>
               <a class="nav-link active fw-medium" aria-current="page" href="login.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Tentang kami</a>
             <?php endif; ?>
           <li class="nav-item">
             <?php if (isLoggedIn()) : ?>
-              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php<?= $item['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Kontak</a>
+              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php?id=<?= $kategori['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Kontak</a>
             <?php else : ?>
               <a class="nav-link active fw-medium" aria-current="page" href="login.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Kontak</a>
             <?php endif; ?>
           </li>
         </ul>
         <div class="col-md-3 text-end">
-          <a href="login.php" button type="button" class="btn btn-outline-success me-2">Login</a>
-          <a href="register.php" button type="button" class="btn btn-success">Sign-up</a>
+          <a href="login.php" class="btn btn-outline-success me-2">Login</a>
+          <a href="register.php" class="btn btn-success">Sign-up</a>
         </div>
       </div>
     </div>
@@ -122,11 +121,11 @@ $kategori = query("SELECT * FROM kategori");
         </div>
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-4 mt-5 mx-3">
-        <?php foreach ($kategori as $kategori) : ?>
+        <?php foreach ($kategori as $item) : ?>
           <div class="col" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1200">
             <div class="card h-100 shadow p-3">
               <?php
-              $imgPath = "../assets/img/" . $kategori['gambar'];
+              $imgPath = "../assets/img/" . $item['gambar'];
               if (file_exists($imgPath)) {
                 echo "<img src='$imgPath' class='card-img-top' width='390' alt='Gambar Paket'>";
               } else {
@@ -134,12 +133,12 @@ $kategori = query("SELECT * FROM kategori");
               }
               ?>
               <div class="card-body">
-                <h5 class="card-title fw-semibold"><?= $kategori['nama']; ?></h5>
-                <p class="card-text"><?= $kategori['deskripsi']; ?></p>
+                <h5 class="card-title fw-semibold"><?= $item['nama']; ?></h5>
+                <p class="card-text"><?= $item['deskripsi']; ?></p>
               </div>
               <div class="card-footer">
                 <?php if (isLoggedIn()) : ?>
-                  <a class="btn btn-success" href="../pages/user/detail.php<?= $item['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
+                  <a class="btn btn-success" href="../pages/user/detail.php?id=<?= $item['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
                 <?php else : ?>
                   <a class="btn btn-success" href="login.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
                 <?php endif; ?>
@@ -155,3 +154,12 @@ $kategori = query("SELECT * FROM kategori");
   <?php
 include '../templates/footer.php';
 ?>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-j57Jd5rN2MdaT+qep0Pp3tYhkLgF3N3jozFWnSJ2MgjpjU6lC8k2x5z8FqY5KfHI" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>
