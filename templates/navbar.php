@@ -15,9 +15,6 @@
 </head>
 
 <body>
-
-
-
   <!-- Navbar -->
   <nav class="navbar fixed-top bg-body-tertiary navbar-expand-xl shadow p-3 bg-light">
     <div class="container">
@@ -34,7 +31,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link fw-medium" aria-current="page" href="cabin.php">Produk</a>
-          </li>        
+          </li>
           <li class="nav-item">
             <a class="nav-link fw-medium" href="tentangkami.html">Tentang Kami</a>
           </li>
