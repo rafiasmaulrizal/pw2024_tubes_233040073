@@ -75,6 +75,7 @@ include '../../templates/navbar.php';
             </div>
           </div>
         <?php endforeach; ?>
+        
       <?php else : ?>
         <div class="col-12 text-center">
           <p>Tidak ada produk yang ditemukan.</p>
