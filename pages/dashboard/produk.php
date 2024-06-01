@@ -66,6 +66,7 @@ include '../../templates/navbardash.php';
       <p class="text-center">Tidak ada produk yang ditemukan</p>
     <?php endif; ?>
   </div>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95PMTr5tHTo05ONWeZ7qvSpZSmOcn6jR9e7Tw9OKM" crossorigin="anonymous"></script>
   </body>
 
