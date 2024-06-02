@@ -51,7 +51,7 @@ include '../../templates/navbar.php';
       </select>
       <button class="btn btn-success " type="submit" name="cari">Cari</button>
     </form>
-    <div class="row row-cols-1 row-cols-md-4 g-4 mt-3 mx-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mx-3">
       <?php if ($cariDitemukan) : ?>
         <?php foreach ($produk as $item) : ?>
           <div class="col" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1200">

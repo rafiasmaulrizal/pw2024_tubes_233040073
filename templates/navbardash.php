@@ -35,7 +35,7 @@
           </li>
         </ul>
         <div class="col-md-3 text-end">
-          <a href="../index.php" class="btn btn-danger">Log Out <i class="bi bi-box-arrow-right"></i></a>
+          <a href="../../index.php" class="btn btn-danger">Log Out <i class="bi bi-box-arrow-right"></i></a>
         </div>
       </div>
     </div>

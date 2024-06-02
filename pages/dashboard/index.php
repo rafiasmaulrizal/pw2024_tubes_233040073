@@ -11,7 +11,7 @@ include '../../templates/navbardash.php';
 
 ?>
 
-<div class="container  my-5 py-5 ">
+<!-- <div class="container  my-5 py-5 ">
   <h2>Daftar List</h2>
   <a href="../tambah.php" class="btn btn-warning mt-3 mb-3"><i class="bi bi-folder-plus"></i> Tambah Kategori</a>
   <br><br>
@@ -50,7 +50,7 @@ include '../../templates/navbardash.php';
       </div>
     <?php endforeach; ?>
   </div>
-</div>
+</div> -->
 
 <!-- bootsrap bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">

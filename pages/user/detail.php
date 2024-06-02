@@ -45,7 +45,7 @@ include '../../templates/navbar.php';
         <span class="sub-title">Pelayanan Kami, Kepuasan Anda. Menghadirkan Layanan Berkualitas</span>
       </div>
     </div>
-    <div class="row mt-2 mx-5 my-5">
+    <div class="row mx-5 my-5">
       <div class="col-md-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
         <div class="card-layanan">
           <h5 class="mt-3 fw-semibold"><i class="bi bi-person-raised-hand" style="color: green;"></i> Customer Support</h5>
