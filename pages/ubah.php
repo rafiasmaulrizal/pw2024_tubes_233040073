@@ -16,7 +16,7 @@ if (isset($_POST["submit"])) {
   if (ubah($_POST) > 0) {
     echo "<script>
               alert('data berhasil diubah');
-              document.location.href = 'dashboard/index.php';
+              document.location.href = 'dashboard/kategori.php';
             </script>";
   } else {
     echo "<script>
@@ -55,11 +55,6 @@ if (isset($_POST["submit"])) {
       <div class="mb-3 shadow-sm">
         <label for="deskripsi" class="form-label fw-medium">Deskripsi</label>
         <input type="text" class="form-control" id="deskripsi" name="deskripsi" required value="<?= $kategori["deskripsi"]; ?>">
-      </div>
-
-      <div class="mb-3 shadow-sm">
-        <label for="lokasi" class="form-label fw-medium">Lokasi</label>
-        <input type="text" class="form-control" id="lokasi" name="lokasi" required value="<?= $kategori["lokasi"]; ?>">
       </div>
 
       <div class="mb-3 shadow-sm">

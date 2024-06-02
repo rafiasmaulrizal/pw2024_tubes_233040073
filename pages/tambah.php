@@ -12,7 +12,7 @@ if (isset($_POST["submit"])) {
   if (tambah($_POST) > 0) {
     echo "<script>
               alert('data berhasil ditambahkan');
-              document.location.href = 'dashboard/index.php';
+              document.location.href = 'dashboard/kategori.php';
             </script>";
   } else {
     echo "<script>
