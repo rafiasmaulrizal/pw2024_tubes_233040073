@@ -12,3 +12,9 @@ sebuah aplikasi web yang dapat mengelola data pada sebuah tabel database. Aplika
 * Ada fungsi login, logout & registrasi (untuk admin).
 * Menggunakan relasi antar tabel.
 * Sorting.
+# Admin
+* username  : admin
+* password  : 123
+# user
+* username  : user
+* password  : 123
