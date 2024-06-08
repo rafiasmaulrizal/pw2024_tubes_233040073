@@ -1,15 +1,14 @@
-#Web Green Corner
-
-Selamat datang di repository Aplikasi Web Green Corner! Proyek ini adalah aplikasi web yang dirancang untuk membantu para pecinta alam menemukan, memesan, dan meninjau lokasi perkemahan.
-
-#Fitur
-
-* Registrasi Pengguna: Fungsi pendaftaran dan login yang aman.
-
-* Daftar List paket : Jelajahi berbagai camping, cabin & cottage, outbound.
-
-* Sistem Pemesanan: Sistem pemesanan dan reservasi yang mudah.
-
-* Pencarian & Filter: Opsi pencarian dan filter lanjutan untuk menemukan list paket yang sempurna.
-
-* Peta Interaktif: Temukan lokasi perkemahan menggunakan peta interaktif.
+# Tema Web
+Tourism
+# Web Green Corner
+sebuah aplikasi web yang dapat mengelola data pada sebuah tabel database. Aplikasi tersebut terdiri dari 2 bagian, front-end untuk user dan back-end untuk admin. Pengelolaan data terdapat pada bagian back-end.
+# Fitur Web
+* Tampil : Data tampil pada halaman user (front-end), halaman admin (back-end) dan ada halaman detail / profile.
+* Insert : Bisa menambah data lewat halaman admin.
+* Update : Bisa mengubah data lewat halaman admin.
+* Delete : Bisa menghapus data lewat halaman admin.
+* Search : Bisa mencari data pada halaman admin dan halaman user.
+* Aplikasi bisa mengupload foto(bisa memvalidasi jenis foto)
+* Ada fungsi login, logout & registrasi (untuk admin).
+* Menggunakan relasi antar tabel.
+* Sorting.
