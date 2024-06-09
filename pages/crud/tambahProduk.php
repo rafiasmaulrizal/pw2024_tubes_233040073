@@ -55,17 +55,17 @@ if (isset($_POST["submit"])) {
 
           <div class="mb-2 shadow-sm">
             <label for="deskripsi" class="form-label">Deskripsi</label>
-            <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" required></textarea>
+            <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" required autocomplete="off"></textarea>
           </div>
 
           <div class="mb-2 shadow-sm">
             <label for="harga" class="form-label">Harga</label>
-            <input type="number" class="form-control" id="harga" name="harga" required>
+            <input type="number" class="form-control" id="harga" name="harga" required autocomplete="off">
           </div>
 
           <div class="mb-3 shadow-sm">
             <label for="gambar" class="form-label">Gambar</label>
-            <input type="file" class="form-control" id="gambar" name="gambar" required>
+            <input type="file" class="form-control" id="gambar" name="gambar" required autocomplete="off">
           </div>
 
           <button type="submit" name="submit" class="btn btn-warning shadow-sm"><i class="bi bi-upload"></i> Tambah</button>

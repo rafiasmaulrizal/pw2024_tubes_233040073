@@ -56,12 +56,12 @@ if (isset($_POST['submit'])) {
       <?php endif; ?>
       <div class="mb-3">
         <label for="username" class="form-label fw-medium" >Username</label>
-        <input type="text" class="form-control" id="username" name="username" required>
+        <input type="text" class="form-control" id="username" name="username" required autocomplete="off">
       </div>
 
       <div class="mb-3">
         <label for="password" class="form-label fw-medium">Password</label>
-        <input type="password" class="form-control" id="password" name="password" required>
+        <input type="password" class="form-control" id="password" name="password" required autocomplete="off">
         <a href="register.php" class="text float-end mt-3 text-decoration-none text-success">
           <p class="text-secondary">Belum punya akun?</p>Register
         </a>

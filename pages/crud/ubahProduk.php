@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
       <input type="hidden" name="gambarLama" value="<?= $produk["gambar"]; ?>">
       <div class="mb-3 shadow-sm">
         <label for="nama" class="form-label fw-medium">Nama</label>
-        <input type="text" class="form-control" id="nama" name="nama" required value="<?= $produk["nama"]; ?>">
+        <input type="text" class="form-control" id="nama" name="nama" required autocomplete="off" value="<?= $produk["nama"]; ?>">
       </div>
 
       <div class="mb-2 shadow-sm">
@@ -73,12 +73,12 @@ if (isset($_POST["submit"])) {
 
       <div class="mb-3 shadow-sm">
         <label for="deskripsi" class="form-label fw-medium">Deskripsi</label>
-        <input type="text" class="form-control" id="deskripsi" name="deskripsi" required value="<?= $produk["deskripsi"]; ?>">
+        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" required autocomplete="off" value="<?= $produk["deskripsi"]; ?>"></textarea>
       </div>
 
       <div class="mb-2 shadow-sm">
         <label for="harga" class="form-label">Harga</label>
-        <input type="number" class="form-control" id="harga" name="harga" required value="<?= $produk["harga"]; ?>">
+        <input type="number" class="form-control" id="harga" name="harga" required autocomplete="off" value="<?= $produk["harga"]; ?>">
       </div>
 
       <div class="mb-3 shadow-sm">

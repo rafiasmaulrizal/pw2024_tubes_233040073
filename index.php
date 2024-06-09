@@ -48,11 +48,26 @@ $kategori = query("SELECT * FROM kategori");
             <?php endif; ?>
           <li class="nav-item">
             <?php if (isLoggedIn()) : ?>
+              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php?id=<?= $kategori['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Fasilitas</a>
+            <?php else : ?>
+              <a class="nav-link active fw-medium" aria-current="page" href="pages/login.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Fasilitas</a>
+            <?php endif; ?>
+          </li>
+          <li class="nav-item">
+            <?php if (isLoggedIn()) : ?>
               <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php?id=<?= $kategori['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Kontak</a>
             <?php else : ?>
               <a class="nav-link active fw-medium" aria-current="page" href="pages/login.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Kontak</a>
             <?php endif; ?>
           </li>
+          <li class="nav-item">
+            <?php if (isLoggedIn()) : ?>
+              <a class="nav-link active fw-medium" aria-current="page" href="../pages/user/detail.php?id=<?= $kategori['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Lokasi</a>
+            <?php else : ?>
+              <a class="nav-link active fw-medium" aria-current="page" href="pages/login.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Lokasi</a>
+            <?php endif; ?>
+          </li>
+          
         </ul>
         <div class="col-md-3 text-end">
           <a href="pages/login.php" class="btn btn-outline-success me-2">Login</a>

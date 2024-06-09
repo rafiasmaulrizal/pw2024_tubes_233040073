@@ -41,19 +41,19 @@ include '../../templates/navbar.php';
       </div>
     </div>
     <div class="row mx-3 my-3">
-      <div class="col-md-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+      <div class="col-md-4">
         <div class="card-layanan">
           <h5 class="mt-3 fw-semibold"><i class="bi bi-person-raised-hand" style="color: green;"></i> Customer Support</h5>
           <p class="mt-3" style="text-align: justify;">Green Corner Pangalengan memiliki prinsip melayani Anda dengan sepenuh Hati serta kemudahan dan selalu siap siaga selama 24 Jam </p>
         </div>
       </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+      <div class="col-md-4">
         <div class="card-layanan">
           <h5 class="mt-3 fw-semibold"><i class="bi bi-geo-alt-fill" style="color: green;"></i> Lokasi Mudah</h5>
           <p class="mt-3" style="text-align: justify;">Lokasi kami berada berada ditepi danau Situ Cileunca yang akan menyuguhkan pemandangan yang asri serta mudah diakses oleh kendaraan pribadi </p>
         </div>
       </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+      <div class="col-md-4">
         <div class="card-layanan">
           <h5 class="mt-3 fw-semibold"><i class="bi bi-cash-stack" style="color: green;"></i> Harga Kompetitif</h5>
           <p class="mt-3" style="text-align: justify;">Harga yang kami tawarkan sesuai dengan pelayanan dan fasilitas yang kami berikan untuk Anda. </p>
@@ -81,7 +81,7 @@ include '../../templates/navbar.php';
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mx-3">
       <?php foreach ($kategori as $kategori) : ?>
-        <div class="col" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1200">
+        <div class="col">
           <div class="card h-100 shadow p-3">
             <?php
             $imgPath = "../../assets/img/" . $kategori['gambar'];

@@ -16,7 +16,7 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar fixed-top bg-body-tertiary navbar-expand-xl shadow p-3 bg-light">
+  <nav class="navbar fixed-top bg-body-tertiary navbar-expand-xl shadow bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="../../assets/img/logogc.png" alt="Bootstrap" width="95" height="50">
@@ -24,30 +24,37 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav text-align">
           <li class="nav-item">
             <a class="nav-link fw-medium" aria-current="page" href="detail.php">Beranda</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link fw-medium" aria-current="page" href="cabin.php">Produk</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link fw-medium" href="tentangkami.html">Tentang Kami</a>
+            <a class="nav-link fw-medium" href="">Tentang Kami</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link fw-medium" href="fasilitas.html">Fasilitas</a>
+            <a class="nav-link fw-medium" href="">Fasilitas</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link fw-medium" href="contact.html">Kontak</a>
+            <a class="nav-link fw-medium" href="">Kontak</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link fw-medium" href="">Lokasi</a>
           </li>
         </ul>
         <div class="col-md-3 text-end">
-          
-          <a href="../../index.php" class="px-3"><i class="bi bi-person-circle"></i></a>
-          <a href="../../index.php" class="btn btn-danger">Log Out </a>
           </div>
-      </div>
-    </div>
+          <a href="../../index.php" class="btn btn-danger " onclick="return confirm('Yakin ingin Logout?');" >Log Out <i class="bi bi-box-arrow-right"></i></a>
+        </div>
+        </div>
   </nav>
   <!-- Navbar End -->
