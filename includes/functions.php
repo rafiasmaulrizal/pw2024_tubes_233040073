@@ -317,21 +317,16 @@ function hapusUsers($id)
   }
 }
 
-function ubahUsers($data)
+function ubahUsers($id, $username, $role)
 {
   $conn = koneksi();
 
-  $id = $data["id"];
-  $username = mysqli_real_escape_string($conn, htmlspecialchars($data['username']));
-  $email = mysqli_real_escape_string($conn, htmlspecialchars($data['email']));
-  $role = mysqli_real_escape_string($conn, htmlspecialchars($data['role']));
-  $password = mysqli_real_escape_string($conn, htmlspecialchars($data['password']));
+  $username = mysqli_real_escape_string($conn, htmlspecialchars($username));
+  $role = mysqli_real_escape_string($conn, htmlspecialchars($role));
 
   $query = "UPDATE users SET
             username = '$username',
-            email = '$email',
-            role = '$role',
-            password = '$password'
+            role = '$role'
             WHERE id = $id";
 
   mysqli_query($conn, $query);
