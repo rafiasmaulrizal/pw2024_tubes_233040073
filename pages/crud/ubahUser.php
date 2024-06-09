@@ -12,23 +12,23 @@ require "../../includes/functions.php";
 $id = $_GET["id"];
 
 // Query data berdasarkan id
-$produk = query("SELECT * FROM produk WHERE id = $id")[0];
+$users = query("SELECT * FROM users WHERE id = $id")[0];
 
-// Ambil data kategori dari database
-$kategoriData = query("SELECT * FROM kategori");
+// // Ambil data kategori dari database
+$role = query("SELECT * FROM users");
 
 // Cek apakah tombol submit sudah ditekan atau belum
 if (isset($_POST["submit"])) {
   // Cek apakah data berhasil diubah atau tidak
-  if (ubahProduk($_POST) > 0) {
+  if (ubahUsers($_POST) > 0) {
     echo "<script>
               alert('data berhasil diubah');
-              document.location.href = '../dashboard/produk.php';
+              document.location.href = '../dashboard/users.php';
             </script>";
   } else {
     echo "<script>
               alert('data gagal diubah');
-              document.location.href = 'ubahProduk.php';
+              document.location.href = 'ubahUser.php';
             </script>";
   }
 }
@@ -52,40 +52,26 @@ if (isset($_POST["submit"])) {
 <body>
   <div class="container d-flex justify-content-center mt-5">
     <form action="" method="post" enctype="multipart/form-data" class="shadow p-5 col-md-5 center mt-1">
-      <h2>Ubah Kategori</h2>
+      <h2>Ubah Users</h2>
       <hr>
-      <input type="hidden" name="id" value="<?= $produk["id"]; ?>">
+      <input type="hidden" name="id" value="<?= $users["id"]; ?>">
       <input type="hidden" name="gambarLama" value="<?= $produk["gambar"]; ?>">
       <div class="mb-3 shadow-sm">
-        <label for="nama" class="form-label fw-medium">Nama</label>
-        <input type="text" class="form-control" id="nama" name="nama" required value="<?= $produk["nama"]; ?>">
+        <label for="nama" class="form-label fw-medium">Username</label>
+        <input type="text" class="form-control" id="nama" name="nama" required value="<?= $users["username"]; ?>">
       </div>
 
       <div class="mb-2 shadow-sm">
-        <label for="kategori_id" class="form-label">Kategori</label>
-        <select class="form-select" id="kategori_id" name="kategori_id" required>
-          <option value="">Pilih Kategori</option>
-          <?php foreach ($kategoriData as $kat) : ?>
-            <option value="<?= $kat['id']; ?>" <?= $kat['id'] == $produk['kategori_id'] ? 'selected' : '' ?>><?= $kat['nama']; ?></option>
+        <label for="role" class="form-label">Kategori</label>
+        <select class="form-select" id="role" name="role" required>
+          <option value="">Pilih Role</option>
+          <?php foreach ($role as $role) : ?>
+            <option value="<?= $role['id']; ?>" <?= $role['id'] == $users['role'] ? 'selected' : '' ?>><?= $role['role']; ?></option>
           <?php endforeach; ?>
         </select>
       </div>
 
-      <div class="mb-3 shadow-sm">
-        <label for="deskripsi" class="form-label fw-medium">Deskripsi</label>
-        <input type="text" class="form-control" id="deskripsi" name="deskripsi" required value="<?= $produk["deskripsi"]; ?>">
-      </div>
-
-      <div class="mb-2 shadow-sm">
-        <label for="harga" class="form-label">Harga</label>
-        <input type="number" class="form-control" id="harga" name="harga" required value="<?= $produk["harga"]; ?>">
-      </div>
-
-      <div class="mb-3 shadow-sm">
-        <label for="gambar" class="form-label fw-medium">Gambar</label>
-        <img src="img/<?= $produk['gambar']; ?>" width="200" alt="">
-        <input type="file" class="form-control" id="gambar" name="gambar">
-      </div>
+      
 
       <button type="submit" name="submit" class="btn btn-warning shadow-sm fw-medium">Ubah</button>
     </form>
