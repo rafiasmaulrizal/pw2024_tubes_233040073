@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
         <p style="color: red;">Username atau Password salah</p>
       <?php endif; ?>
       <div class="mb-3">
-        <label for="username" class="form-label fw-medium">Username</label>
+        <label for="username" class="form-label fw-medium" >Username</label>
         <input type="text" class="form-control" id="username" name="username" required>
       </div>
 
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
 
   </div>
 
-  <!-- bootsrap bootstrap -->
+  <!-- bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
   </script>
 </body>
