@@ -43,16 +43,16 @@ if (isset($_POST["submit"])) {
       <hr>
       <div class="mb-3 shadow-sm">
         <label for="nama" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="nama" name="nama" required>
+        <input type="text" class="form-control" id="nama" name="nama" required autocomplete="off">
       </div>
 
       <div class="mb-2 shadow-sm">
         <label for="deskripsi" class="form-label">Deskripsi</label>
-        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" required></textarea>
+        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" required autocomplete="off"></textarea>
       </div>
       <div class="mb-3 shadow-sm">
         <label for="gambar" class="form-label">Gambar</label>
-        <input type="file" class="form-control" id="gambar" name="gambar" required>
+        <input type="file" class="form-control" id="gambar" name="gambar" required autocomplete="off">
       </div>
       <button type="submit" name="submit" class="btn btn-warning shadow-sm"><i class="bi bi-upload"></i> Tambah</button>
     </form>

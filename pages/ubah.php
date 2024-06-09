@@ -48,12 +48,12 @@ if (isset($_POST["submit"])) {
 
       <div class="mb-3 shadow-sm">
         <label for="nama" class="form-label fw-medium">Nama</label>
-        <input type="text" class="form-control" id="nama" name="nama" required value="<?= $kategori["nama"]; ?>">
+        <input type="text" class="form-control" id="nama" name="nama" required autocomplete="off" value="<?= $kategori["nama"]; ?>">
       </div>
 
       <div class="mb-3 shadow-sm">
         <label for="deskripsi" class="form-label fw-medium">Deskripsi</label>
-        <input type="text" class="form-control" id="deskripsi" name="deskripsi" required value="<?= $kategori["deskripsi"]; ?>">
+        <input type="text" class="form-control" id="deskripsi" name="deskripsi" required autocomplete="off" value="<?= $kategori["deskripsi"]; ?>">
       </div>
 
       <div class="mb-3 shadow-sm">
