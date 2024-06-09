@@ -22,7 +22,7 @@
       </button>
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav text-align">
+        <ul class="navbar-nav text-align mx-5">
 
           <li class="nav-item">
             <a class="nav-link fw-medium" href="kategori.php">Kategori</a>
@@ -38,7 +38,7 @@
           
         </ul>
       <div class="col-md-3 text-end mx-5">
-        <a href="../../index.php" class="btn btn-danger" onclick="return confirm('Yakin ingin Logout?');">Log Out <i class="bi bi-box-arrow-right"></i></a>
+        <a href="../../index.php" class="btn btn-danger" onclick="return confirm('Yakin ingin Logout?');">Log Out <i class="bi bi-box-arrow-right"></i></a> <a href="../../assets/cetak.php" target="_blank" class="btn btn-warning fw-medium px-2 mx-2 "><i class="bi bi-filetype-pdf"></i> PriceList</a>
       </div>
       </div>
     </div>
