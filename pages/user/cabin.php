@@ -12,10 +12,11 @@ $kategoriData = query("SELECT * FROM kategori");
 $produk = query("SELECT * FROM produk");
 $cariDitemukan = true;
 
-// Cari produk berdasarkan kategori
+// Cari produk berdasarkan kategori dan urutan
 if (isset($_POST["cari"])) {
   $keyword = $_POST["keyword"];
   $kategoriId = $_POST["kategori_id"];
+  $sortBy = $_POST["sort_by"];
 
   $query = "SELECT * FROM produk WHERE nama LIKE '%$keyword%'";
 
@@ -23,9 +24,20 @@ if (isset($_POST["cari"])) {
     $query .= " AND kategori_id = $kategoriId";
   }
 
+  if ($sortBy == "nama") {
+    $query .= " ORDER BY nama";
+  } elseif ($sortBy == "harga_asc") {
+    $query .= " ORDER BY harga ASC";
+  } elseif ($sortBy == "harga_desc") {
+    $query .= " ORDER BY harga DESC";
+  } elseif ($sortBy == "kategori") {
+    $query .= " ORDER BY kategori_id";
+  }
+
   $produk = query($query);
   $cariDitemukan = !empty($produk);
 }
+
 include '../../templates/navbar.php';
 ?>
 
@@ -48,6 +60,12 @@ include '../../templates/navbar.php';
         <?php foreach ($kategoriData as $kat) : ?>
           <option value="<?= $kat['id']; ?>"><?= $kat['nama']; ?></option>
         <?php endforeach; ?>
+      </select>
+      <select class="form-select" id="sort_by" name="sort_by">
+        <option value="kategori">Urutkan Berdasarkan</option>
+        <option value="nama">Nama</option>
+        <option value="harga_asc">Harga Termurah</option>
+        <option value="harga_desc">Harga Termahal</option>
       </select>
       <button class="btn btn-success " type="submit" name="cari" id="tombol-cari">Cari</button>
     </form>

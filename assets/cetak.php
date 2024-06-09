@@ -20,7 +20,7 @@ $html = '<!DOCTYPE html>
 </body>
 </html>';
 $mpdf->WriteHTML($html);
-$mpdf->Output();
+$mpdf->Output('PriceList.pdf', \Mpdf\Output\Destination::DOWNLOAD);
 
 ?>
 
