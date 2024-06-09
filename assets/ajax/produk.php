@@ -11,7 +11,7 @@ $produk = query($query);
 ?>
 
 <?php foreach ($produk as $item): ?>
-
+<div class="user">
 <div class="card h-100 shadow p-3">
   <?php
   $imgPath = "../../pages/crud/img/" . $item['gambar'];
@@ -30,5 +30,8 @@ $produk = query($query);
     <a class="btn btn-success" href="hal-detail.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
   </div>
 </div>
+</div>
+
+
 
 <?php endforeach; ?>

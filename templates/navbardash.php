@@ -21,9 +21,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav text-align">
-          <li class="nav-item">
-            <a class="nav-link fw-medium" aria-current="page" href="index.php">Home</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link fw-medium" href="kategori.php">Kategori</a>
           </li>

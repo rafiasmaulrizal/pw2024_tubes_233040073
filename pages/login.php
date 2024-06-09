@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
       // Cek apakah pengguna adalah admin
       if ($row['role'] === 'admin') {
         // Jika pengguna adalah admin, arahkan ke halaman dashboard admin
-        header("Location: dashboard/index.php");
+        header("Location: dashboard/kategori.php");
         exit;
       } else {
         // Jika pengguna adalah user biasa, arahkan ke halaman detail pengguna

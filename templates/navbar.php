@@ -43,8 +43,10 @@
           </li>
         </ul>
         <div class="col-md-3 text-end">
-          <a href="../../index.php" class="btn btn-danger">Log Out <i class="bi bi-person-circle"></i></i></i></a>
-        </div>
+          
+          <a href="../../index.php" class="px-3"><i class="bi bi-person-circle"></i></a>
+          <a href="../../index.php" class="btn btn-danger">Log Out </a>
+          </div>
       </div>
     </div>
   </nav>

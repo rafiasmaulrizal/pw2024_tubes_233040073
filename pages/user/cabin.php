@@ -70,7 +70,7 @@ include '../../templates/navbar.php';
                 <p class="card-text"><?= $item['deskripsi']; ?></p>
               </div>
               <div class="card-footer">
-                <a class="btn btn-success" href="hal-detail.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
+                <a class="btn btn-success" href="hal-detail.php?id=<?= $item['id']; ?>" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
               </div>
             </div>
           </div>

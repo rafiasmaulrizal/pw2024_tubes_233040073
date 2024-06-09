@@ -30,12 +30,13 @@ include '../../templates/navbardash.php';
 
   <form action="" method="post">
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Cari Produk" aria-autocomplete="off" name="keyword" autocomplete="off">
-      <button class="btn btn-warning" type="submit" name="cari">Cari</button>
+      <input type="text" class="form-control" placeholder="Cari Produk" aria-autocomplete="off" name="keyword" autocomplete="off" id="keyword">
+      <button class="btn btn-warning" type="submit" name="cari" id="tombol-cari">Cari</button>
     </div>
   </form>
 
-  <div class="row row-cols-1 row-cols-md-4 g-4 mt-3 mx-3 mb-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mx-3" id="container">
+
     <?php if (!empty($kategori)) : ?>
       <?php foreach ($kategori as $produk) : ?>
         <div class="col">
@@ -51,12 +52,13 @@ include '../../templates/navbardash.php';
             <div class="card-body">
               <h5 class="card-title fw-semibold"><?= $produk['nama']; ?></h5>
               <p class="card-text fw-medium" style="color: green;">Rp. <?= $produk['harga']; ?>K/Malam</p>
-              <p class="card-text"><?= $produk['deskripsi']; ?></p>
             </div>
 
             <div class="card-footer">
+              <a href="halProduk.php?id=<?= $produk['id']; ?>" class="badge text-bg-success text-decoration-none"><i class="bi bi-eye-fill"></i> Lihat </a>
               <a href="../../pages/crud/ubahProduk.php?id=<?= $produk['id']; ?>" class="badge text-bg-warning text-decoration-none"><i class="bi bi-eyedropper"></i> Ubah </a>
               <a href="../../pages/crud/hapusProduk.php?id=<?= $produk['id']; ?>" onclick="return confirm('Yakin ingin menghapus?');" class="badge text-bg-danger text-decoration-none"><i class="bi bi-trash"></i> Hapus</a>
+
             </div>
 
           </div>
@@ -66,6 +68,9 @@ include '../../templates/navbardash.php';
       <p class="text-center">Tidak ada produk yang ditemukan</p>
     <?php endif; ?>
   </div>
+
+  <script src="../../assets/js/script.js"></script>
+
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95PMTr5tHTo05ONWeZ7qvSpZSmOcn6jR9e7Tw9OKM" crossorigin="anonymous"></script>
   </body>

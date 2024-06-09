@@ -7,14 +7,12 @@ if (!isset($_SESSION['login'])) {
 
 require '../../includes/functions.php';
 
-// Ambil ID produk dari URL
 $id = $_GET['id'] ?? null;
 if ($id === null) {
   header("Location: ../index.php");
   exit;
 }
 
-// Query untuk mengambil detail produk berdasarkan ID
 $query = "SELECT * FROM produk WHERE id = $id";
 $produk = query($query);
 
@@ -24,7 +22,7 @@ if (empty($produk)) {
 }
 
 $produk = $produk[0];
-include '../../templates/navbar.php';
+include '../../templates/navbardash.php';
 ?>
 
 <section class="produk-detail py-5 mt-5" id="produk-detail">
@@ -43,9 +41,12 @@ include '../../templates/navbar.php';
       <div class="col-md-6">
         <h2 class="fw-semibold"><?= $produk['nama']; ?></h2>
         <p class="fw-medium" style="color: green;">Rp. <?= $produk['harga']; ?>K/Malam</p>
-        <p><?= $produk['deskripsi']; ?></p><hr>
-        <a class="btn btn-success" href="cabin.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Kembali</a>
-        </div>
+        <p><?= $produk['deskripsi']; ?></p>
+        <hr>
+        <a href="produk.php" class="badge text-bg-success text-decoration-none"> Kembali </a>
+        <a href="../../pages/crud/ubahProduk.php?id=<?= $produk['id']; ?>" class="badge text-bg-warning text-decoration-none"><i class="bi bi-eyedropper"></i> Ubah </a>
+        <a href="../../pages/crud/hapusProduk.php?id=<?= $produk['id']; ?>" onclick="return confirm('Yakin ingin menghapus?');" class="badge text-bg-danger text-decoration-none"><i class="bi bi-trash"></i> Hapus</a>
+      </div>
     </div>
   </div>
 </section>
