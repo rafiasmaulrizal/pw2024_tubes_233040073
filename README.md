@@ -11,10 +11,7 @@ sebuah aplikasi web yang dapat mengelola data pada sebuah tabel database. Aplika
 * Aplikasi bisa mengupload foto(bisa memvalidasi jenis foto)
 * Ada fungsi login, logout & registrasi (untuk admin).
 * Menggunakan relasi antar tabel.
+* Mengaplikasikan AJAX pada fungsi search
 * Sorting.
-# Admin
-* username  : admin
-* password  : 123
-# user
-* username  : user
-* password  : 123
+* PDF Reporting
+* Mengurutkan data sesuai kategori
