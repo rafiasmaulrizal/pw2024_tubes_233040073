@@ -73,7 +73,7 @@ if (isset($_POST["submit"])) {
 
       <div class="mb-3 shadow-sm">
         <label for="deskripsi" class="form-label fw-medium">Deskripsi</label>
-        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" required autocomplete="off" value="<?= $produk["deskripsi"]; ?>"></textarea>
+        <input type="text" class="form-control" id="deskripsi" name="deskripsi" required autocomplete="off" value="<?= $produk["deskripsi"]; ?>"></input>
       </div>
 
       <div class="mb-2 shadow-sm">
