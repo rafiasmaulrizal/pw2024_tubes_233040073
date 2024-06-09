@@ -11,6 +11,7 @@ $conn = koneksi();
 $queryProduk = mysqli_query($conn, "SELECT * FROM produk");
 $jumlahProduk = mysqli_num_rows($queryProduk);
 
+
 $queryKategori = mysqli_query($conn, "SELECT * FROM kategori");
 $kategoriData = [];
 while ($row = mysqli_fetch_assoc($queryKategori)) {
@@ -22,13 +23,29 @@ $produk = [];
 if (isset($_POST["cari"])) {
   $keyword = $_POST["keyword"];
   $kategoriId = $_POST["kategori_id"];
+  $sortBy = $_POST["sort_by"];
+
 
   $query = "SELECT * FROM produk WHERE nama LIKE '%$keyword%'";
+
   if (!empty($kategoriId)) {
     $query .= " AND kategori_id = $kategoriId";
   }
 
+  if ($sortBy == "nama") {
+    $query .= " ORDER BY nama";
+  } elseif ($sortBy == "harga_asc") {
+    $query .= " ORDER BY harga ASC";
+  } elseif ($sortBy == "harga_desc") {
+    $query .= " ORDER BY harga DESC";
+  } elseif ($sortBy == "kategori") {
+    $query .= " ORDER BY kategori_id";
+  } else {
+    $query .= " ORDER BY id";
+  }
+
   $produk = query($query);
+  $cariDitemukan = !empty($produk); 
 } else {
   $produk = query("SELECT * FROM produk");
 }
@@ -41,11 +58,11 @@ include '../../templates/navbardash.php';
 
   <form method="POST" class="input-group">
       <input type="text" class="form-control" placeholder="Cari Produk" aria-autocomplete="off" name="keyword" autocomplete="off" id="keyword">
-      <select class="form-select" id="kategori_id" name="kategori_id">
-        <option value="">Pilih Kategori</option>
-        <?php foreach ($kategoriData as $kat) : ?>
-          <option value="<?= $kat['id']; ?>"><?= $kat['nama']; ?></option>
-        <?php endforeach; ?>
+      <select class="form-select" id="sort_by" name="sort_by">
+        <option value="kategori">Urutkan Berdasarkan</option>
+        <option value="nama">Nama</option>
+        <option value="harga_asc">Harga Termurah</option>
+        <option value="harga_desc">Harga Termahal</option>
       </select>
       <button class="btn btn-warning " type="submit" name="cari" id="tombol-cari">Cari</button>
     </form>

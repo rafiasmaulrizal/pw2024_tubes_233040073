@@ -48,12 +48,12 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link fw-medium" href="">Lokasi</a>
+            <a class="nav-link fw-medium" href="user-detail.php">Akun</a>
           </li>
         </ul>
         <div class="col-md-3 text-end">
         </div>
-        <a href="../../index.php" class="btn btn-danger mx-3 fw-medium" onclick="return confirm('Yakin ingin Logout?');">Log Out <i class="bi bi-box-arrow-right"></i></a> <a href="../../assets/cetak.php" target="_blank" class="btn btn-warning fw-medium"><i class="bi bi-filetype-pdf"></i> PriceList</a>
+        <a href="../../index.php" class="btn btn-danger mx-2 fw-medium" onclick="return confirm('Yakin ingin Logout?');">Log Out <i class="bi bi-box-arrow-right"></i></a> <a href="../../assets/cetak.php"  class="btn btn-warning fw-medium"><i class="bi bi-filetype-pdf"></i> PriceList</a>
       </div>
     </div>
   </nav>
