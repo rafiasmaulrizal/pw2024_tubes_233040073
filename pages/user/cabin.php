@@ -31,7 +31,7 @@ include '../../templates/navbar.php';
 
 <section class="cabin" id="cabin">
   <div class="container py-5">
-    <div class="row" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+    <div class="row">
       <div class="col-12 px-5 text-center">
         <h2 class="fw-semibold">
           Temukan Paket Menginap dan Outbound di Green Corner
@@ -42,19 +42,19 @@ include '../../templates/navbar.php';
     </div>
 
     <form method="POST" class="input-group mt-5 shadow">
-      <input type="text" class="form-control" placeholder="Cari Produk" aria-autocomplete="off" name="keyword" autocomplete="off">
+      <input type="text" class="form-control" placeholder="Cari Produk" aria-autocomplete="off" name="keyword" autocomplete="off" id="keyword">
       <select class="form-select" id="kategori_id" name="kategori_id">
         <option value="">Pilih Kategori</option>
         <?php foreach ($kategoriData as $kat) : ?>
           <option value="<?= $kat['id']; ?>"><?= $kat['nama']; ?></option>
         <?php endforeach; ?>
       </select>
-      <button class="btn btn-success " type="submit" name="cari">Cari</button>
+      <button class="btn btn-success " type="submit" name="cari" id="tombol-cari">Cari</button>
     </form>
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mx-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mx-3" id="container">
       <?php if ($cariDitemukan) : ?>
         <?php foreach ($produk as $item) : ?>
-          <div class="col" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1200">
+          <div class="col">
             <div class="card h-100 shadow p-3">
               <?php
               $imgPath = "../../pages/crud/img/" . $item['gambar'];
@@ -70,7 +70,7 @@ include '../../templates/navbar.php';
                 <p class="card-text"><?= $item['deskripsi']; ?></p>
               </div>
               <div class="card-footer">
-                <a class="btn btn-success" href="cabin.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
+                <a class="btn btn-success" href="hal-detail.php" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Selengkapnya</a>
               </div>
             </div>
           </div>
@@ -84,6 +84,8 @@ include '../../templates/navbar.php';
     </div>
   </div>
 </section>
+
+<script src="../../assets/js/script.js"></script>
 
 <?php
 include '../../templates/footer.php';

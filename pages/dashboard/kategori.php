@@ -19,7 +19,7 @@ include '../../templates/navbardash.php';
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Cari Kategori" aria-autocomplete="off" name="keyword" autocomplete="off">
         <button class="btn btn-warning" type="submit" name="cari">Cari</button>
-      </div>
+      </div> 
     </form>
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mx-3 mb-5">

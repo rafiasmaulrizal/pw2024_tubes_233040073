@@ -303,3 +303,38 @@ function ubahProduk($data)
 
   return mysqli_affected_rows($conn);
 }
+
+// hapus user
+function hapusUsers($id)
+{
+  $conn = koneksi();
+
+  $query = "DELETE FROM users WHERE id = $id";
+  if (mysqli_query($conn, $query)) {
+    return mysqli_affected_rows($conn);
+  } else {
+    return 0;
+  }
+}
+
+function ubahUsers($data)
+{
+  $conn = koneksi();
+
+  $id = $data["id"];
+  $username = mysqli_real_escape_string($conn, htmlspecialchars($data['username']));
+  $email = mysqli_real_escape_string($conn, htmlspecialchars($data['email']));
+  $role = mysqli_real_escape_string($conn, htmlspecialchars($data['role']));
+  $password = mysqli_real_escape_string($conn, htmlspecialchars($data['password']));
+
+  $query = "UPDATE users SET
+            username = '$username',
+            email = '$email',
+            role = '$role',
+            password = '$password'
+            WHERE id = $id";
+
+  mysqli_query($conn, $query);
+
+  return mysqli_affected_rows($conn);
+}

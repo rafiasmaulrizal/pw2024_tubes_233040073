@@ -20,18 +20,13 @@ include '../../templates/navbar.php';
 ?>
 <section class="home" id="home">
   <div class="container">
-    <div class="row" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+    <div class="row">
       <div class="col mx-2" style="text-align: justify;">
         <h1 class="fw-bold" style="color: #fff;">Nikmati Suasana Alam <span>Pangalengan</span></h1>
         <p class="mt-3" style="color: #fff;">Green Corner Pangalengan merupakan tempat wisata yang berada di Pangalengan, Kabupaten Bandung. Green Corner Pangalengan menyediakan berbagai fasilitas yang dapat Anda nikmati bersama keluarga dan teman-teman Anda. </p>
         <h3 class="fw-semi-bold" style="color: #fff;">Bersama Green Corner</h3>
         <a class="btn btn-success" href="https://wa.me/6285210010902" role="button">Booking Now</a>
-        <form action="" method="post">
-          <div class="input-group mt-5 shadow ">
-            <input type="text" class="form-control" placeholder="Cari Kategori" aria-autocomplete="off" name="keyword" autocomplete="off">
-            <button class="btn btn-success" type="submit" name="cari">Cari</button>
-          </div>
-        </form>
+       
       </div>
     </div>
   </div>
@@ -39,13 +34,13 @@ include '../../templates/navbar.php';
 
 <section class="layanan">
   <div class="container">
-    <div class="row" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+    <div class="row">
       <div class="col-12 text-center">
         <h2 class="fw-semibold">Layanan Kami</h2>
         <span class="sub-title">Pelayanan Kami, Kepuasan Anda. Menghadirkan Layanan Berkualitas</span>
       </div>
     </div>
-    <div class="row mx-5 my-5">
+    <div class="row mx-3 my-3">
       <div class="col-md-4" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
         <div class="card-layanan">
           <h5 class="mt-3 fw-semibold"><i class="bi bi-person-raised-hand" style="color: green;"></i> Customer Support</h5>
@@ -70,12 +65,19 @@ include '../../templates/navbar.php';
 
 <section class="paketlist" id="list">
   <div class="container">
-    <div class="row" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+    <div class="row">
       <div class="col-12 text-center">
         <h2 class="fw-semibold">Paket List</h2>
         <span class="sub-title">Ke Pangalengan bingung nyari tempat berkemah, menginap dan outbound? Ke Green Corner banyak pilihan</span>
       </div>
     </div>
+
+    <form action="" method="post">
+          <div class="input-group mt-5 shadow ">
+            <input type="text" class="form-control" placeholder="Cari Kategori" aria-autocomplete="off" name="keyword" autocomplete="off">
+            <button class="btn btn-success" type="submit" name="cari">Cari</button>
+          </div>
+        </form>
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3 mx-3">
       <?php foreach ($kategori as $kategori) : ?>
