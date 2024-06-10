@@ -334,19 +334,18 @@ function ubahUsers($id, $username, $role)
   return mysqli_affected_rows($conn);
 }
 
-function ubahProfile($id, $username, $role)
+function ubahProfil($id, $username)
 {
   $conn = koneksi();
 
   $username = mysqli_real_escape_string($conn, htmlspecialchars($username));
-  $role = mysqli_real_escape_string($conn, htmlspecialchars($role));
 
   $query = "UPDATE users SET
-            username = '$username',
-            role = '$role'
+            username = '$username'
             WHERE id = $id";
 
   mysqli_query($conn, $query);
 
   return mysqli_affected_rows($conn);
 }
+

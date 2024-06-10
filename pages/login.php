@@ -8,10 +8,12 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
   $result = mysqli_query(koneksi(), "SELECT * FROM users WHERE username = '$username'");
   if (mysqli_num_rows($result) === 1) {
-    // cek password
     $row = mysqli_fetch_assoc($result);
     if (password_verify($password, $row['password'])) {
-      $_SESSION['login'] = true;
+      // Simpan data pengguna ke dalam variabel sesi
+      $_SESSION['user_id'] = $row['id'];
+      $_SESSION['username'] = $row['username'];
+      $_SESSION['role'] = $row['role'];
       // Cek apakah pengguna adalah admin
       if ($row['role'] === 'admin') {
         // Jika pengguna adalah admin, arahkan ke halaman dashboard admin
