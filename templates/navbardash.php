@@ -38,7 +38,8 @@
           
         </ul>
       <div class="col-md-3 text-end mx-5">
-        <a href="../../index.php" class="btn btn-danger" onclick="return confirm('Yakin ingin Logout?');">Log Out <i class="bi bi-box-arrow-right"></i></a> <a href="../../assets/cetak.php" target="_blank" class="btn btn-warning fw-medium px-2 mx-2 "><i class="bi bi-filetype-pdf"></i> PriceList</a>
+         <a href="../../assets/cetak.php" target="_blank" class="btn btn-warning fw-medium px-2 mx-2 "><i class="bi bi-filetype-pdf"></i> PriceList</a>
+         <a href="../../index.php" class="btn btn-danger" onclick="return confirm('Yakin ingin Logout?');"><i class="bi bi-box-arrow-right"></i></a>
       </div>
       </div>
     </div>

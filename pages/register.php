@@ -34,11 +34,11 @@ if (isset($_POST['submit'])) {
     <h2 class="text-center">Daftar <img src="../assets/img/logogc.png" width="90" alt=""></h2>
     <div class="mb-3">
         <label for="username" class="form-label fw-medium ">Nama</label>
-        <input type="text" class="form-control " id="username" name="username" required >
+        <input type="text" class="form-control " id="username" name="username" required autocomplete="off">
       </div>
       <div class="mb-3">
         <label for="email" class="form-label fw-medium">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+        <input type="email" class="form-control" id="email" name="email" required autocomplete="off">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label fw-medium">Password</label>

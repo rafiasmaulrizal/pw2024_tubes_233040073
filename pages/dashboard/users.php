@@ -20,6 +20,7 @@ include '../../templates/navbardash.php';
         <tr>
           <th scope="col">No</th>
           <th scope="col">Username</th>
+          <th scope="col">Gambar</th>
           <th scope="col">Email</th>
           <th scope="col">Role</th>
           <th scope="col">Aksi</th>
@@ -34,6 +35,13 @@ include '../../templates/navbardash.php';
           <tr>
             <th scope="row"><?= $i++; ?></th>
             <td><?= $users['username']; ?></td>
+            <td>
+              <?php if ($users['gambar']) : ?>
+                <img src="../crud/img/ <?= $users['gambar']; ?>" alt="<?= $users['username']; ?>" width="50">
+              <?php else : ?>
+                <img src="../../assets/img/defaulfoto.png" alt="default" width="50">
+              <?php endif; ?>
+            </td>
             <td><?= $users['email']; ?></td>
             <td><?= $users['role']; ?></td>
             <td>

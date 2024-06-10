@@ -38,21 +38,21 @@ if (isset($_POST['ubah'])) {
 </head>
 
 <body>
-  <div class="container col-5 py-5 my-5 ">
-    <h1 class="fw-bold mb-5 ">Ubah data users</h1>
-    
-    <form action="" method="POST">
+  <div class="container d-flex justify-content-center mt-5">
+    <form action="" method="POST" enctype="multipart/form-data" class="shadow p-5 col-md-5 center mt-1">
       <input type="hidden" name="id" value="<?= $users["id"]; ?>">
+      <h2>Ubah Users</h2>
+      <hr>
 
       <div class="mb-3">
-        <label for="nama" class="form-label fw-bold text-success">Username</label>
-        <input type="text" class="form-control" id="nama" name="nama" required value="<?= $users["username"]; ?>">
+        <label for="nama" class="form-label fw-bold">Username</label>
+        <input type="text" class="form-control" id="nama" name="nama" required autocomplete="off" value="<?= $users["username"]; ?>">
       </div>
       <div class="mb-3">
-        <label for="nim" class="form-label fw-bold  text-success">Role</label>
-        <input type="text" class="form-control" id="nim" name="nim" required value="<?= $users["role"]; ?>">
+        <label for="nim" class="form-label fw-bold">Role</label>
+        <input type="text" class="form-control" id="nim" name="nim" required autocomplete="off" value="<?= $users["role"]; ?>">
       </div>
-      <button type="submit" class="btn btn-primary fw-bold" name="ubah">Ubah</button>
+      <button type="submit" class="btn btn-warning fw-bold" name="ubah">Ubah</button>
     </form>
 
   </div>
